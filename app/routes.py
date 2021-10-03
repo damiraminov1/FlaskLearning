@@ -1,17 +1,11 @@
 # -*- coding: utf-8 -*-
-from flask import render_template, flash, redirect, url_for
-from app import app
-from app.forms import LoginForm
-from flask_login import current_user, login_user
+from flask import render_template, flash, redirect, url_for, request
+from flask_login import current_user, login_user, logout_user, login_required
+from app import app, db
 from app.models import User
-from flask_login import logout_user
-from flask_login import login_required
-from flask import request
+from app.forms import RegistrationForm, LoginForm, EditProfileForm
 from werkzeug.urls import url_parse
-from app import db
-from app.forms import RegistrationForm
 from datetime import datetime
-from app.forms import EditProfileForm
 
 
 @app.route('/')
@@ -95,7 +89,7 @@ def before_request():
 @app.route('/edit_profile', methods=['GET', 'POST'])
 @login_required
 def edit_profile():
-    form = EditProfileForm()
+    form = EditProfileForm(current_user.username)
     if form.validate_on_submit():
         current_user.username = form.username.data
         current_user.about_me = form.about_me.data
