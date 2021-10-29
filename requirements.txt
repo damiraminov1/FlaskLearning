@@ -1,0 +1,8 @@
+Flask
+Werkzeug
+Flask-SQLAlchemy
+Flask-Migrate
+Flask-Mail
+Flask-Login
+Flask-WTF
+email_validator
