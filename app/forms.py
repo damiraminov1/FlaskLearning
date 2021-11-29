@@ -1,12 +1,12 @@
 from flask_wtf import FlaskForm
-from flask_babel import lazy_gettext as _l
+from flask_babel import _, lazy_gettext as _l
 from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo, Length
 from app.models import User
 
 
 class LoginForm(FlaskForm):
-    username = StringField((_l('Username')), validators=[DataRequired()])
+    username = StringField(_l('Username'), validators=[DataRequired()])
     password = PasswordField(_l('Password'), validators=[DataRequired()])
     remember_me = BooleanField(_l('Remember Me'))
     submit = SubmitField(_l('Sign in'))
@@ -60,7 +60,7 @@ class ResetPasswordForm(FlaskForm):
 
 class PostForm(FlaskForm):
     post = TextAreaField(_l('Say something'), validators=[DataRequired(), Length(min=1, max=140)])
-    submit = SubmitField(_l('Sumbit'))
+    submit = SubmitField(_l('Submit'))
 
 
 class EmptyForm(FlaskForm):

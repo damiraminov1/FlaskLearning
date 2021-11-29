@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-11-17 01:13+0500\n"
-"PO-Revision-Date: 2021-11-14 16:42+0500\n"
+"POT-Creation-Date: 2021-11-28 10:32+0500\n"
+"PO-Revision-Date: 2021-11-28 10:32+0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru\n"
 "Language-Team: ru <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: app/__init__.py:20
 msgid "Please log in to access this page"
-msgstr "Пожалуйста, войдите в систему чтобы открыть эту страницу"
+msgstr "Пожалуйста, войдите в систему, чтобы открыть эту страницу"
 
 #: app/forms.py:9 app/forms.py:16 app/forms.py:34
 msgid "Username"
@@ -49,11 +49,11 @@ msgstr "Повторите пароль"
 
 #: app/forms.py:20 app/templates/register.html:5
 msgid "Register"
-msgstr "Зарегистрироваться"
+msgstr "Регистрация"
 
 #: app/forms.py:25 app/forms.py:46
 msgid "Please use a different username."
-msgstr "Пожалуйста, используйте другой логин"
+msgstr "Пожалуйста, используйте другое имя пользователя"
 
 #: app/forms.py:30
 msgid "Please use a different email address."
@@ -65,66 +65,74 @@ msgstr "Обо мне"
 
 #: app/forms.py:36
 msgid "Submit"
-msgstr "Ок"
+msgstr "Отправить"
 
 #: app/forms.py:51 app/forms.py:58
 msgid "Request Password Reset"
-msgstr "Отправить письмо для сброса пароля"
+msgstr "Изменить пароль"
 
 #: app/forms.py:62
 msgid "Say something"
-msgstr "Скажите что-нибудь"
+msgstr "Напишите о чем-нибудь"
 
 #: app/forms.py:63
-msgid "Sumbit"
-msgstr "Отправить"
+msgid "Submit"
+msgstr "Опубликовать"
 
-#: app/routes.py:24
+#: app/routes.py:37
 msgid "Your post is now live!"
-msgstr "Пост опубликован!"
+msgstr "Ваш пост опубликован"
 
-#: app/routes.py:45
+#: app/routes.py:58
 msgid "Invalid username or password"
 msgstr "Неверное имя пользователя или пароль"
 
-#: app/routes.py:71
+#: app/routes.py:84
 msgid "Congratulations, you are now a registered user!"
 msgstr "Поздравляем, вы зарегистрированы!"
 
-#: app/routes.py:107
+#: app/routes.py:113
 msgid "You changes have been saved."
-msgstr "Изменения сохранены."
+msgstr "Изменения сохранены"
 
-#: app/routes.py:123
+#: app/routes.py:129
 msgid "You cannot follow yourself!"
-msgstr "Вы не можете подписаться на самого себя!"
+msgstr "Вы не можете подписаться на себя!"
 
-#: app/routes.py:127
+#: app/routes.py:133
 #, python-format
 msgid "You are following %(username)s!"
 msgstr "Вы подписались на %(username)s!"
 
-#: app/routes.py:136
+#: app/routes.py:142
 #, python-format
 msgid "User %(username)s not found."
 msgstr "Пользователь %(username)s не найден."
 
-#: app/routes.py:139
+#: app/routes.py:145
 msgid "You cannot unfollow yourself!"
 msgstr "Вы не можете от себя отписаться!"
 
-#: app/routes.py:143
+#: app/routes.py:149
 #, python-format
 msgid "You are not following %(username)s."
 msgstr "Вы больше не подписаны на %(username)s."
 
-#: app/routes.py:169
+#: app/routes.py:175
 msgid "Check your email for the instructions to reset your password"
 msgstr "Проверьте почту для дальнейших инструкций по восстановлению"
 
-#: app/routes.py:185
+#: app/routes.py:191
 msgid "Your password has been reset."
 msgstr "Вам пароль изменен."
+
+#: app/translate.py:8
+msgid "Error: the translation service is not configured."
+msgstr "Ошибка: сервис перевода не настроен"
+
+#: app/translate.py:21
+msgid "Error: the translation service failed."
+msgstr "Ошибка: сервис перевода не отвечает"
 
 #: app/templates/404.html:4
 msgid "File Not Found"
@@ -135,13 +143,17 @@ msgid "An unexpected error has occurred"
 msgstr "Произошла неожиданная ошибка"
 
 #: app/templates/500.html:5
-msgid "The administrator has been notified. Sorry for the inconveniece!"
-msgstr "Администратор уже в курсе прозошедшей ошибки. Извините за неудобства!"
+msgid "The administrator has been notified. Sorry for the inconvenience!"
+msgstr "Администратор уже в курсе произшедшей ошибки. Извините за неудобства!"
 
 #: app/templates/_post.html:14
 #, python-format
 msgid "%(username)s said %(when)s"
 msgstr "%(username)s сказал(а) %(when)s"
+
+#: app/templates/_post.html:25
+msgid "Translate"
+msgstr "Перевести"
 
 #: app/templates/base.html:21
 msgid "Home"
@@ -153,7 +165,7 @@ msgstr "Тренды"
 
 #: app/templates/base.html:26
 msgid "Login"
-msgstr "Логин"
+msgstr "Войти"
 
 #: app/templates/base.html:28
 msgid "Profile"
@@ -163,14 +175,18 @@ msgstr "Профиль"
 msgid "Logout"
 msgstr "Выйти"
 
+#: app/templates/base.html:65
+msgid "Error: Could not contact server."
+msgstr "Ошибка: не сервис перевода не отвечает"
+
 #: app/templates/edit_profile.html:5
 msgid "Edit Profile"
-msgstr "Изменить профиль"
+msgstr "Мои данные"
 
 #: app/templates/index.html:5
 #, python-format
 msgid "Hi, %(username)s!"
-msgstr "Приветствую, %(username)s!"
+msgstr "Привет, %(username)s!"
 
 #: app/templates/index.html:17 app/templates/user.html:41
 msgid "Newer posts"
@@ -190,11 +206,11 @@ msgstr "Новый пользователь?"
 
 #: app/templates/login.html:11
 msgid "Click to Register!"
-msgstr "Нажмите для регистрации!"
+msgstr "Нажмите для регистрации"
 
 #: app/templates/login.html:13
 msgid "Forgot Your Password?"
-msgstr "Забыли пароль?"
+msgstr "Забыли пароь?"
 
 #: app/templates/login.html:14
 msgid "Click to Reset It"
@@ -206,7 +222,7 @@ msgstr "Изменить пароль"
 
 #: app/templates/reset_password_request.html:5
 msgid "Reset Password"
-msgstr "Изменить пароль"
+msgstr "Восстановление пароля"
 
 #: app/templates/user.html:8
 msgid "User"
