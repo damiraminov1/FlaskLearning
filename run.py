@@ -1,8 +1,8 @@
-from app import app, db, cli
+from app import create_app, db, cli
 from app.models import User, Post
 
-if __name__ == "__main__":
-    app.run(debug=False)
+app = create_app()
+cli.register(app)
 
 
 @app.shell_context_processor
